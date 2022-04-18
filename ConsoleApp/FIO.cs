@@ -23,7 +23,6 @@ namespace ConsoleApp
             this.surname = surname;
             this.patronymic = patronymic;
         }
-
         public string Name
         {
             get { return name; }
@@ -38,11 +37,7 @@ namespace ConsoleApp
             get { return patronymic; }
             set { patronymic = value; }
         }
-
-
-
-
-        public void enter()
+        public void EnterFIO()
         {
             bool a = true;
             while (a)
@@ -68,7 +63,7 @@ namespace ConsoleApp
                 }
             }
         }
-        public void print()
+        public void PrintFIO()
         {
             if (!Equals(surname, null))
             {
@@ -78,6 +73,7 @@ namespace ConsoleApp
                 if (!Equals(patronymic, null))
                     Console.Write($"Отчество: {patronymic}  ");
             }
+            Console.WriteLine();
         }
     }
 }

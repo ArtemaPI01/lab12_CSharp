@@ -10,8 +10,8 @@ namespace ConsoleApp
             {
                 FIO fio = new FIO("A", "Б", "В");
                 Owner Alisher = new Owner();
-                Alisher.enter();
-                Alisher.print();
+                Alisher.EnterFIO();
+                Alisher.EnterFIO();
                 int N = 2;
                 Shop[] shop = new Shop[N];
                 for (int i = 0; i < N; i++)

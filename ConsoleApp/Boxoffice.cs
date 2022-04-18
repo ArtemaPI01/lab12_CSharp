@@ -10,7 +10,6 @@ namespace ConsoleApp
         private int workers;
         private int count;
 
-
         public Boxoffice() {
             fio = new FIO();
         }
@@ -60,7 +59,7 @@ namespace ConsoleApp
             {
                 try
                 {
-                    fio.enter();
+                    fio.EnterFIO();
                     Console.Write("Введите кол-во кассиров: ");
                     workers = Convert.ToInt32(Console.ReadLine());
                     if (workers < 0) throw new Exception("Ошибка! Отрицательное число.");
@@ -77,17 +76,19 @@ namespace ConsoleApp
                 }
             }
         }
+
         public void Print()
         {
             Console.WriteLine("\nИнформация о кассе:");
             if (!Equals(fio.Surname, null))
             {
                 Console.WriteLine("ФИО старшего кассира:");
-                fio.print();
+                fio.PrintFIO();
             }
             Console.WriteLine($"Кассиры: {workers}  Кассы: {count}");
 
         }
+
         public void CloakBoxoffice(int x)
         {
             try

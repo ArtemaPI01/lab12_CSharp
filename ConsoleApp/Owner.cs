@@ -4,29 +4,18 @@ using System.Text;
 
 namespace ConsoleApp
 {
-    class Owner
+    class Owner : FIO
     {
-        private FIO fio;
         private int income;
         private int expenses;
 
-
-        public Owner(FIO fio, int income, int expenses)
+        public Owner(string name, string surname, string patronymic, int income, int expenses) :base(name, surname, patronymic)
         {
-            this.fio = fio;
             this.income = income;
             this.expenses = expenses;
         }
-
-        public Owner(FIO fio)
-        {
-            this.fio = fio;
-        }
-
-        public Owner() {
-            fio = new FIO();
-        }
-
+        public Owner() : base() { }
+        public Owner(string surname) : base(surname) {}
         public int Income
         {
             set
@@ -38,12 +27,6 @@ namespace ConsoleApp
             }
             get { return income; }
         }
-
-        public FIO Fio
-        {
-            get { return fio; }
-        }
-
         public int Expenses
         {
             set
@@ -56,14 +39,14 @@ namespace ConsoleApp
             get { return expenses; }
         }
 
-        public void enter()
+        public void EnterOwner()
         {
             bool a = true;
             while (a)
             {
                 try
                 {
-                    fio.enter();
+                    base.EnterFIO();
                     Console.Write("Введите доходы: ");
                     income = Convert.ToInt32(Console.ReadLine());
                     if (income < 0) throw new Exception("Ошибка! Отрицательное число.");
@@ -80,17 +63,19 @@ namespace ConsoleApp
                 }
             }
         }
-        public void print()
+
+        public void PrintOwner()
         {
             Console.WriteLine("\nИнформация о владельце:\n");
-            fio.print();
+            base.PrintFIO();
             int profit;
-            profitOwner(out profit);
+            ProfitOwner(out profit);
             Console.WriteLine($"Доходы: {income}  Расходы: {expenses} Прибыль: {profit}");
         }
-        void profitOwner(out int profit)
+        void ProfitOwner(out int profit)
         {
             profit = income - expenses;
         }
+
     }
 }
