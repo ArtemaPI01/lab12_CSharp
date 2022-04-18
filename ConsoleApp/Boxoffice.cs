@@ -83,7 +83,7 @@ namespace ConsoleApp
             if (!Equals(fio.Surname, null))
             {
                 Console.WriteLine("ФИО старшего кассира:");
-                fio.PrintFIO();
+                fio.Print();
             }
             Console.WriteLine($"Кассиры: {workers}  Кассы: {count}");
 

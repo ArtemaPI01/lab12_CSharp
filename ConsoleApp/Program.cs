@@ -8,10 +8,13 @@ namespace ConsoleApp
         {
             try
             {
+                Rectangle rect = new Rectangle(1,2);
+                rect.Width = 5;
+                rect.PrintShape();
                 FIO fio = new FIO("A", "Б", "В");
                 Owner Alisher = new Owner();
                 Alisher.EnterFIO();
-                Alisher.PrintFIO();
+                Alisher.Print();
                 int N = 2;
                 Shop[] shop = new Shop[N];
                 for (int i = 0; i < N; i++)
