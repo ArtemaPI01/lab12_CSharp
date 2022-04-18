@@ -8,7 +8,6 @@ namespace ConsoleApp
     {
         private int income;
         private int expenses;
-
         public Owner(string name, string surname, string patronymic, int income, int expenses) :base(name, surname, patronymic)
         {
             this.income = income;
@@ -38,7 +37,6 @@ namespace ConsoleApp
             }
             get { return expenses; }
         }
-
         public void EnterOwner()
         {
             bool a = true;
@@ -46,7 +44,7 @@ namespace ConsoleApp
             {
                 try
                 {
-                    base.EnterFIO();
+                    EnterFIO();
                     Console.Write("Введите доходы: ");
                     income = Convert.ToInt32(Console.ReadLine());
                     if (income < 0) throw new Exception("Ошибка! Отрицательное число.");
@@ -63,19 +61,17 @@ namespace ConsoleApp
                 }
             }
         }
-
         public void PrintOwner()
         {
             Console.WriteLine("\nИнформация о владельце:\n");
-            base.PrintFIO();
+            PrintFIO();
             int profit;
             ProfitOwner(out profit);
             Console.WriteLine($"Доходы: {income}  Расходы: {expenses} Прибыль: {profit}");
         }
-        void ProfitOwner(out int profit)
+        public void ProfitOwner(out int profit)
         {
             profit = income - expenses;
         }
-
     }
 }

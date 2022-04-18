@@ -8,13 +8,10 @@ namespace ConsoleApp
 {
     class FIO
     {
-        private string name;
-        private string surname;
-        private string patronymic;
-
-        public FIO() {
-            
-        }
+        protected string name;
+        protected string surname;
+        protected string patronymic;
+        public FIO() {}
         public FIO(string surname) {
             this.surname = surname;
         }

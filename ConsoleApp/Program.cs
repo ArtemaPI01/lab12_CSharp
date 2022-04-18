@@ -11,7 +11,7 @@ namespace ConsoleApp
                 FIO fio = new FIO("A", "Б", "В");
                 Owner Alisher = new Owner();
                 Alisher.EnterFIO();
-                Alisher.EnterFIO();
+                Alisher.PrintFIO();
                 int N = 2;
                 Shop[] shop = new Shop[N];
                 for (int i = 0; i < N; i++)
