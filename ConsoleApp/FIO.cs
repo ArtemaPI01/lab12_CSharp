@@ -60,7 +60,7 @@ namespace ConsoleApp
                 }
             }
         }
-        public void PrintFIO()
+        public virtual void Print()
         {
             if (!Equals(surname, null))
             {

@@ -61,10 +61,10 @@ namespace ConsoleApp
                 }
             }
         }
-        public void PrintOwner()
+        public override void Print()
         {
             Console.WriteLine("\nИнформация о владельце:\n");
-            PrintFIO();
+            base.Print();
             int profit;
             ProfitOwner(out profit);
             Console.WriteLine($"Доходы: {income}  Расходы: {expenses} Прибыль: {profit}");
