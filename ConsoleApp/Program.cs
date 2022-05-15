@@ -46,12 +46,22 @@ namespace ConsoleApp
                 Shop magaz = new Shop();
                 magaz.Name = "Ashan";
                 Console.WriteLine($"Название {magaz.Name}.");
+                Shape[] shape = new Shape[2];
+                shape[0] = new Rectangle(3, 3);
+                shape[1] = new Circle(3);
+                for (int i=0; i <2 ;i++)
+                    shape[i].PrintShape();
+                IShape[] ishape = new IShape[2];
+                ishape[0] = new Rectangle2(3, 3);
+                ishape[1] = new Circle2(3);
+                for (int i = 0; i < 2; i++)
+                    shape[i].PrintShape();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine("Для продолжения нажмите ENTER.");
-                while (Console.ReadKey(true).Key != ConsoleKey.Enter) ;
+                while (Console.ReadKey(true).Key != ConsoleKey.Enter);
             }
         }
     }
