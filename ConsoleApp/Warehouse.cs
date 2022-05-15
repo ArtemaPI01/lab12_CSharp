@@ -8,13 +8,11 @@ namespace ConsoleApp
     {
         private string[] product;
         private int station;
-
         public Warehouse(string[] product, int station)
         {
             this.product = product;
             this.station = station;
         }
-
         public Warehouse(string[] product)
         {
             this.product = product;
@@ -22,7 +20,6 @@ namespace ConsoleApp
         public Warehouse() {
             product = new string[] { };
         }
-
         public string[] Product
         {
             set
@@ -33,7 +30,6 @@ namespace ConsoleApp
                 return product; 
             }
         }
-
         public int Station
         {
             set
@@ -113,5 +109,12 @@ namespace ConsoleApp
             }
             Console.WriteLine($"{str} нет на складе.");       
         }
+
+        public object Clone()//мелкое копирование
+        {
+            return MemberwiseClone();
+        }
+        public object Clone2() => new Warehouse(product, station);//глубокое копирование
+
     }
 }

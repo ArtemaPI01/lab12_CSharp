@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
     class FIO
     {
-        protected string name;
+        protected string name;//2) Продемонстрировать применение модификатора protected
         protected string surname;
         protected string patronymic;
         public FIO() {}
@@ -34,7 +30,7 @@ namespace ConsoleApp
             get { return patronymic; }
             set { patronymic = value; }
         }
-        public void EnterFIO()
+        public void Enter()
         {
             bool a = true;
             while (a)

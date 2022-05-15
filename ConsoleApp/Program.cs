@@ -8,12 +8,10 @@ namespace ConsoleApp
         {
             try
             {
-                Rectangle rect = new Rectangle(1,2);
-                rect.Width = 5;
-                rect.PrintShape();
-                FIO fio = new FIO("A", "Б", "В");
+                FIO fio = new FIO();
+                fio.Enter();
                 Owner Alisher = new Owner();
-                Alisher.EnterFIO();
+                Alisher.Enter(fio);//3) Продемонстрировать перегрузку метода базового класса в производном классе 
                 Alisher.Print();
                 int N = 2;
                 Shop[] shop = new Shop[N];
@@ -26,6 +24,8 @@ namespace ConsoleApp
                 Shop.CountOfShop();
                 Warehouse home = new Warehouse();
                 home.Enter();
+                Warehouse home2 = (Warehouse)home.Clone();//мелкое копирование
+                Warehouse home3 = (Warehouse)home.Clone();//глубокое копирование
                 home.print();
                 home.Poisk("AVS");
                 int a = 20;

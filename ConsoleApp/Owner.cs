@@ -8,8 +8,10 @@ namespace ConsoleApp
     {
         private int income;
         private int expenses;
-        public Owner(string name, string surname, string patronymic, int income, int expenses) :base(name, surname, patronymic)
+        public Owner(string name, string surname, string patronymic, int income, int expenses) 
+            :base(name, surname, patronymic)//4) Продемонстрировать в конструкторе производного класса с параметрами вызов конструктора базового класса
         {
+
             this.income = income;
             this.expenses = expenses;
         }
@@ -37,14 +39,16 @@ namespace ConsoleApp
             }
             get { return expenses; }
         }
-        public void EnterOwner()
+        public void Enter(FIO fio)
         {
             bool a = true;
             while (a)
             {
                 try
                 {
-                    EnterFIO();
+                    name = fio.Name;
+                    name = fio.Surname;
+                    name = fio.Patronymic;
                     Console.Write("Введите доходы: ");
                     income = Convert.ToInt32(Console.ReadLine());
                     if (income < 0) throw new Exception("Ошибка! Отрицательное число.");
@@ -61,7 +65,7 @@ namespace ConsoleApp
                 }
             }
         }
-        public override void Print()
+        public override void Print()//7) Придумать разумное использование виртуальных функций и создать их в вашем проекте.
         {
             Console.WriteLine("\nИнформация о владельце:\n");
             base.Print();

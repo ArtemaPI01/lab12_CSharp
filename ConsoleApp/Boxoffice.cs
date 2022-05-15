@@ -59,7 +59,7 @@ namespace ConsoleApp
             {
                 try
                 {
-                    fio.EnterFIO();
+                    fio.Enter();
                     Console.Write("Введите кол-во кассиров: ");
                     workers = Convert.ToInt32(Console.ReadLine());
                     if (workers < 0) throw new Exception("Ошибка! Отрицательное число.");
